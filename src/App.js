@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Geocoding from './pages/Geocoding';
+import Home from './pages/Home';
+import Detail from './pages/Detail'; // Importando a nova página
+import Searchbar from './components/SearchBar';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Searchbar />
+        <nav>
+          <ul style={{ display: 'flex', gap: '10px', listStyle: 'none' }}>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/geocoding">Geocoding</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/geocoding" element={<Geocoding />} />
+          <Route path="/detail/:name/:lat/:lon" element={<Detail />} /> {/* Rota dinâmica com name */}
+        </Routes>
+      </Router>
     </div>
   );
 }
