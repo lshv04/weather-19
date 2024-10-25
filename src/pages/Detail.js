@@ -1,7 +1,7 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom'; // Importando Link para criar o redirecionamento
 import useFetch from '../hooks/useFetch';
-import { Card, Row, Col } from 'react-bootstrap';
+import { Card, Row, Col, Button } from 'react-bootstrap'; // Importando Button do Bootstrap
 import './Detail.css'; // Importando o CSS
 
 const options = {};
@@ -134,6 +134,15 @@ function Detail() {
                 </Card.Text>
               </Card.Body>
             </Card>
+          </Col>
+        </Row>
+
+        <Row className="mb-4">
+          <Col className="text-center">
+            {/* Botão que envia lat e lon para a página Extra.js */}
+            <Link to={`/extra/${lat}/${lon}`}>
+              <Button variant="primary">See Extra Information</Button>
+            </Link>
           </Col>
         </Row>
       </div>

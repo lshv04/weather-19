@@ -1,7 +1,8 @@
 import './App.css';
 import Geocoding from './pages/Geocoding';
 import Home from './pages/Home';
-import Detail from './pages/Detail'; // Importando a nova página
+import Detail from './pages/Detail'; // Importando a página Detail
+import Extra from './pages/Extra'; // Importando a página Extra
 import Searchbar from './components/SearchBar';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/geocoding" element={<Geocoding />} />
           <Route path="/detail/:name/:lat/:lon" element={<Detail />} /> {/* Rota dinâmica com name */}
+          <Route path="/extra/:lat/:lon" element={<Extra />} /> {/* Rota para a página Extra */}
         </Routes>
       </Router>
     </div>
