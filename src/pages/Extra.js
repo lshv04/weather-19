@@ -2,8 +2,9 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import { Line } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler } from 'chart.js'; // Importando Filler
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler } from 'chart.js';
 import { Card, Accordion } from 'react-bootstrap';
+import './Extra.css'; // Importando o CSS
 
 // Registrando componentes e o plugin Filler no Chart.js
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
@@ -11,7 +12,7 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 const options = {};
 
 function Extra() {
-  const { lat, lon } = useParams(); // Capturando lat e lon da URL
+  const { lat, lon } = useParams();
 
   const { data, loading, error } = useFetch(
     `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=797703c9bbce7164cfab34943034bf2b&units=metric`,
@@ -19,11 +20,11 @@ function Extra() {
   );
 
   if (loading) {
-    return <h2>Carregando...</h2>; // Exibe uma mensagem de carregamento
+    return <h2>Carregando...</h2>;
   }
 
   if (error) {
-    return <h2>Erro: {error.message}</h2>; // Exibe uma mensagem de erro, se houver
+    return <h2>Erro: {error.message}</h2>;
   }
 
   // Função para formatar as datas
@@ -35,7 +36,7 @@ function Extra() {
 
   // Agrupando a previsão por dia
   const forecastByDay = data.list.reduce((acc, item) => {
-    const date = formatDate(item.dt_txt); // Obtendo a data formatada
+    const date = formatDate(item.dt_txt);
     if (!acc[date]) {
       acc[date] = [];
     }
@@ -55,32 +56,32 @@ function Extra() {
         data: chartData,
         borderColor: 'rgba(75, 192, 192, 1)',
         backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        fill: true, // Ativando o preenchimento da área sob a linha
+        fill: true,
       }
     ],
   };
 
   return (
-    <div className="container-fluid"> {/* Adicionada a classe container-fluid */}
-      <h1>{data.city.name} - 5 Day Weather Forecast</h1> {/* Nome da cidade e descrição breve */}
+    <div className="extra-container"> {/* Classe CSS para fundo escuro */}
+      <h1>{data.city.name} - 5 Day Weather Forecast</h1>
       <p>Here is the 5-day weather forecast for {data.city.name}, updated every 3 hours. Scroll down to see detailed weather information.</p>
 
-      <div style={{ maxHeight: '400px', maxWidth: '800px', width: '100%', margin: '0 auto' }}> {/* Ajuste inline do gráfico */}
+      <div className="chart-container">
         <Line
           data={chartOptions}
           options={{
-            maintainAspectRatio: false, // Permite que o gráfico se ajuste ao tamanho do container
+            maintainAspectRatio: false,
           }}
         />
       </div>
 
       {Object.keys(forecastByDay).map((day, index) => (
-        <Card key={index} className="mb-3">
-          <Card.Header>
+        <Card key={index} className="extra-card">
+          <Card.Header className="extra-card-header">
             <h2>{day}</h2>
           </Card.Header>
           <Card.Body>
-            <Accordion defaultActiveKey={null}> {/* Todos os itens fechados por padrão */}
+            <Accordion defaultActiveKey={null}>
               {forecastByDay[day].map((item, idx) => (
                 <Accordion.Item eventKey={idx.toString()} key={idx}>
                   <Accordion.Header>
@@ -91,7 +92,7 @@ function Extra() {
                       style={{ marginLeft: '10px' }}
                     />
                   </Accordion.Header>
-                  <Accordion.Body>
+                  <Accordion.Body className="extra-accordion-body">
                     <p>Temperature: {item.main.temp}°C</p>
                     <p>Feels Like: {item.main.feels_like}°C</p>
                     <p>Weather: {item.weather[0].description}</p>

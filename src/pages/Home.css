@@ -1,0 +1,10 @@
+#openweathermap-widget-12 * {
+    box-shadow: none !important; /* Remove sombras de todos os elementos dentro do widget */
+    border: none !important; /* Remove bordas (caso aplicável) */
+  }
+  
+  /* Ajuste de espaçamento e margens */
+  #openweathermap-widget-12 {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
