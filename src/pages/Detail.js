@@ -62,11 +62,11 @@ function Detail() {
 
         <Row className="mb-4">
           <Col>
-            <Card className="h-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
+            <Card className="h-100 text-white" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
               <Card.Header style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>General Information</Card.Header>
               <Card.Body>
-                <Card.Title>{data.name} ({sys.country})</Card.Title>
-                <Card.Text>
+                <Card.Title className='text-white'>{data.name} ({sys.country})</Card.Title>
+                <Card.Text className='text-white'>
                   <img src={weatherIconUrl} alt={weather[0].description} />
                   Weather: {weather[0].description} ({weather[0].main})
                   <br />
@@ -76,10 +76,10 @@ function Detail() {
             </Card>
           </Col>
           <Col>
-            <Card className="h-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
+            <Card className="h-100 text-white" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
               <Card.Header style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>Temperature Details</Card.Header>
               <Card.Body>
-                <Card.Text>
+                <Card.Text className='text-white'>
                   Current Temperature: {main.temp}°C
                   <br />
                   Feels Like: {main.feels_like}°C
@@ -95,10 +95,10 @@ function Detail() {
 
         <Row className="mb-4">
           <Col>
-            <Card className="h-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
+            <Card className="h-100 text-white" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
               <Card.Header style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>Wind</Card.Header>
               <Card.Body>
-                <Card.Text>
+                <Card.Text className='text-white'>
                   Speed: {wind.speed} m/s
                   <br />
                   Direction: {wind.deg}°
@@ -109,10 +109,10 @@ function Detail() {
             </Card>
           </Col>
           <Col>
-            <Card className="h-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
+            <Card className="h-100 text-white" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
               <Card.Header style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>Atmospheric Pressure & Humidity</Card.Header>
               <Card.Body>
-                <Card.Text>
+                <Card.Text className='text-white'>
                   Pressure: {main.pressure} hPa
                   <br />
                   Humidity: {main.humidity}%
@@ -124,10 +124,10 @@ function Detail() {
 
         <Row className="mb-4">
           <Col>
-            <Card className="h-100" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
+            <Card className="h-100 text-white" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
               <Card.Header style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>Sunrise & Sunset</Card.Header>
               <Card.Body>
-                <Card.Text>
+                <Card.Text className='text-white'>
                   Sunrise: {new Date(sys.sunrise * 1000).toLocaleTimeString()}
                   <br />
                   Sunset: {new Date(sys.sunset * 1000).toLocaleTimeString()}

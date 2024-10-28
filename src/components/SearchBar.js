@@ -28,7 +28,7 @@ const Searchbar = () => {
         name="input"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        placeholder="Search here..."
+        placeholder="Weather in your city"
         style={{ border: 'none', boxShadow: 'none' }}
       />
        <button type="submit" className="btn btn-primary "><span><i className="bi bi-search"></i></span></button>

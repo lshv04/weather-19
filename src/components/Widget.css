@@ -8,9 +8,10 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
     text-align: center;
-  }
+   
+}
   
   .widget-content {
     background-color: rgba(0, 0, 0, 0.4); 

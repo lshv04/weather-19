@@ -46,7 +46,7 @@ const Widget = ({ lat, lon }) => { // Recebendo lat e lon como props
 
   return (
     <div
-      className="widget-container"
+      className="widget-container container"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',

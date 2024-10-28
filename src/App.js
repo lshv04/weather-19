@@ -5,22 +5,15 @@ import Detail from './pages/Detail'; // Importando a página Detail
 import Extra from './pages/Extra'; // Importando a página Extra
 import Searchbar from './components/SearchBar';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Navbarone from './components/Navbar';
+
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Searchbar />
-        <nav>
-          <ul style={{ display: 'flex', gap: '10px', listStyle: 'none' }}>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/geocoding">Geocoding</Link>
-            </li>
-          </ul>
-        </nav>
+       
+       <Navbarone/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/geocoding" element={<Geocoding />} />
