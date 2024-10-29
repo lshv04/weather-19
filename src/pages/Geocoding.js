@@ -11,7 +11,7 @@ const Geocoding = () => {
   const query = searchParams.get('query'); // Captura o parâmetro 'query' da URL
 
   const { data, loading, error } = useFetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`, options
+    `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`, options
   );
 
   if (loading)
