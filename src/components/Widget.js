@@ -49,7 +49,7 @@ const Widget = ({ lat, lon }) => {
 
   // Selecionando a imagem de fundo com base nas condições climáticas
   const backgroundImage = getBackgroundImage(data.weather[0].main);
-  const weatherIconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+  const weatherIconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 
   return (
     <div
