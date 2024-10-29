@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import './Widget.css'; // Importando o CSS para estilos
 
@@ -26,18 +27,18 @@ const getBackgroundImage = (weatherMain) => {
   }
 };
 
-const Widget = ({ lat, lon }) => { // Recebendo lat e lon como props
+const Widget = ({ lat, lon }) => {
   const { data, loading, error } = useFetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=797703c9bbce7164cfab34943034bf2b&units=metric`,
     options
   );
 
   if (loading) {
-    return <h2>Carregando...</h2>; // Exibe uma mensagem de carregamento
+    return <h2>Loading...</h2>; // Exibe uma mensagem de carregamento
   }
 
   if (error) {
-    return <h2>Erro: {error.message}</h2>; // Exibe uma mensagem de erro, se houver
+    return <h2>Error: {error.message}</h2>; // Exibe uma mensagem de erro, se houver
   }
 
   // Selecionando a imagem de fundo com base nas condições climáticas
@@ -46,7 +47,7 @@ const Widget = ({ lat, lon }) => { // Recebendo lat e lon como props
 
   return (
     <div
-      className="widget-container container"
+      className="widget-container"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
@@ -60,6 +61,10 @@ const Widget = ({ lat, lon }) => { // Recebendo lat e lon como props
         <p>{Math.round(data.main.temp)}°C</p>
         <p>{data.weather[0].description}</p>
         <p>Max: {Math.round(data.main.temp_max)}°C / Min: {Math.round(data.main.temp_min)}°C</p>
+        {/* Botão para redirecionar para a página Detail com name, lat e lon */}
+        <Link to={`/detail/${data.name}/${lat}/${lon}`} className="btn btn-primary mt-3">
+          View Details
+        </Link>
       </div>
     </div>
   );

@@ -3,8 +3,7 @@ import Geocoding from './pages/Geocoding';
 import Home from './pages/Home';
 import Detail from './pages/Detail'; // Importando a página Detail
 import Extra from './pages/Extra'; // Importando a página Extra
-import Searchbar from './components/SearchBar';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbarone from './components/Navbar';
 
 

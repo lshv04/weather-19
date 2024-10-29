@@ -1,4 +1,5 @@
 /* Navbar.css */
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Inconsolata:wght@200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&display=swap');
 .navbar {
     background-color: #16222a; /* Fundo escuro */
     padding: 10px 20px;
@@ -16,6 +17,7 @@
   }
   
   .navbar-logo a {
+    font-family: "Montserrat", sans-serif;
     color: #fff;
     text-decoration: none;
     font-size: 1.5rem;

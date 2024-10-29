@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className="container-fluid home-container ">
       <div className="container ">
-       <h1>Weather Highlights</h1>
+       <h1 className='p-3'>Weather Highlights</h1>
         <div className="row">
         <div className="col-12 mb-4">
             <Widget lat={-20.11055} lon={-43.05500} /> {/* Alvinópolis */}
