@@ -31,7 +31,7 @@ const getBackgroundImage = (weatherMain) => {
 
 const Widget = ({ lat, lon }) => {
   const { data, loading, error } = useFetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=797703c9bbce7164cfab34943034bf2b&units=metric`,
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}&units=metric`,
     options
   );
 

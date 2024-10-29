@@ -16,7 +16,7 @@ function Extra() {
   const { lat, lon } = useParams();
 
   const { data, loading, error } = useFetch(
-    `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=797703c9bbce7164cfab34943034bf2b&units=metric`,
+    `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}&units=metric`,
     options
   );
 
@@ -67,11 +67,11 @@ function Extra() {
   };
 
   return (
-    <div className="extra-container"> {/* Classe CSS para fundo escuro */}
+    <div className="extra-container container-fluid"> {/* Classe CSS para fundo escuro */}
       <h1>{data.city.name} - 5 Day Weather Forecast</h1>
       <p>Here is the 5-day weather forecast for {data.city.name}, updated every 3 hours. Scroll down to see detailed weather information.</p>
 
-      <div className="chart-container">
+      <div className="chart-container container">
         <Line
           data={chartOptions}
           options={{
@@ -81,7 +81,7 @@ function Extra() {
       </div>
 
       {Object.keys(forecastByDay).map((day, index) => (
-        <Card key={index} className="extra-card">
+        <Card key={index} className="extra-card container">
           <Card.Header className="extra-card-header">
             <h2>{day}</h2>
           </Card.Header>
