@@ -2,6 +2,7 @@ import React from 'react';
 import useFetch from '../hooks/useFetch';
 import { useSearchParams, Link } from 'react-router-dom';
 import './Geocoding.css'; // Importando o CSS
+import Spinner from "react-bootstrap/Spinner";
 
 const options = {};
 
@@ -13,13 +14,17 @@ const Geocoding = () => {
     `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=797703c9bbce7164cfab34943034bf2b`, options
   );
 
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
+  if (loading)
+    return (
+      <div className="d-flex justify-content-center m-5 pt-3">
+        <Spinner animation="border" variant="primary" />
+      </div>
+    );
 
   if (error) {
-    return <h2>Error: {error.message}</h2>;
+    return <h2>Erro: {error.message}</h2>; // Exibe uma mensagem de erro, se houver
   }
+
 
   return (
     <div className="geocoding-container">

@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import './Widget.css'; // Importando o CSS para estilos
+import Spinner from "react-bootstrap/Spinner";
+
 
 const options = {};
 
@@ -33,13 +35,17 @@ const Widget = ({ lat, lon }) => {
     options
   );
 
-  if (loading) {
-    return <h2>Loading...</h2>; // Exibe uma mensagem de carregamento
-  }
+  if (loading)
+    return (
+      <div className="d-flex justify-content-center m-5 pt-3">
+        <Spinner animation="border" variant="primary" />
+      </div>
+    );
 
   if (error) {
-    return <h2>Error: {error.message}</h2>; // Exibe uma mensagem de erro, se houver
+    return <h2>Erro: {error.message}</h2>; // Exibe uma mensagem de erro, se houver
   }
+
 
   // Selecionando a imagem de fundo com base nas condições climáticas
   const backgroundImage = getBackgroundImage(data.weather[0].main);

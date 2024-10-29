@@ -5,6 +5,7 @@ import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler } from 'chart.js';
 import { Card, Accordion } from 'react-bootstrap';
 import './Extra.css'; // Importando o CSS
+import Spinner from "react-bootstrap/Spinner";
 
 // Registrando componentes e o plugin Filler no Chart.js
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
@@ -19,13 +20,17 @@ function Extra() {
     options
   );
 
-  if (loading) {
-    return <h2>Carregando...</h2>;
-  }
+  if (loading)
+    return (
+      <div className="d-flex justify-content-center m-5 pt-3">
+        <Spinner animation="border" variant="primary" />
+      </div>
+    );
 
   if (error) {
-    return <h2>Erro: {error.message}</h2>;
+    return <h2>Erro: {error.message}</h2>; // Exibe uma mensagem de erro, se houver
   }
+
 
   // Função para formatar as datas
   const formatDate = (dt_txt) => {

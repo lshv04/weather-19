@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'; // Importando Link para cria
 import useFetch from '../hooks/useFetch';
 import { Card, Row, Col, Button } from 'react-bootstrap'; // Importando Button do Bootstrap
 import './Detail.css'; // Importando o CSS
+import Spinner from "react-bootstrap/Spinner";
 
 const options = {};
 
@@ -14,13 +15,17 @@ function Detail() {
     options
   );
 
-  if (loading) {
-    return <h2>Carregando...</h2>; // Exibe uma mensagem de carregamento
-  }
+  if (loading)
+    return (
+      <div className="d-flex justify-content-center m-5 pt-3">
+        <Spinner animation="border" variant="primary" />
+      </div>
+    );
 
   if (error) {
     return <h2>Erro: {error.message}</h2>; // Exibe uma mensagem de erro, se houver
   }
+
 
   // Função que retorna a URL da imagem de fundo com base no clima
   const getBackgroundImage = (weatherMain) => {
