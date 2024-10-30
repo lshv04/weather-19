@@ -51,7 +51,7 @@ function Detail() {
 
   // Extraindo dados da API
   const { main, weather, wind, clouds, sys } = data;
-  const weatherIconUrl = `http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+  const weatherIconUrl = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
   const backgroundImage = getBackgroundImage(weather[0].main); // Obtem a imagem de fundo com base no clima
 
   return (

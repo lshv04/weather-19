@@ -92,7 +92,7 @@ function Extra() {
                   <Accordion.Header>
                     {new Date(item.dt_txt).toLocaleTimeString()}
                     <img
-                      src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
+                      src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
                       alt={item.weather[0].description}
                       style={{ marginLeft: '10px' }}
                     />

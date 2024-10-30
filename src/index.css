@@ -2,6 +2,7 @@
 body {
   margin: 0;
 padding:0;
+height: 100vw;
 }
 .bord{
   border:1px solid black;
