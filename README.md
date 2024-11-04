@@ -1,7 +1,7 @@
 ![Blue Futuristic Technology Presentation (31)](https://github.com/user-attachments/assets/e29edb12-3f12-4cb5-99ac-1ed8a8e9ea71)
 
 
-# Personal Project - React Weather - 19  
+# Projeto Pessoal - React Weather - 19  
 
 [🇧🇷 Leia em Português](#português) | [🇺🇸 Read in English](#english)
 
@@ -44,11 +44,13 @@ Ao entrar na página, o usuário tem 5 cidades padrão e a opção de buscar por
 ![Mobile Screenshot 3](https://github.com/user-attachments/assets/37e77284-cb2f-4c27-898c-38ff64805bb1)
 ![Mobile Screenshot 4](https://github.com/user-attachments/assets/346175dd-34f5-471b-9fa7-738245268a1a)
 
+https://github.com/user-attachments/assets/8aa7a91d-bac9-41f4-be24-4da999c55b1f
+
 Neste repositório, você tem acesso a todo o material produzido no projeto.
 
 ---
 
-## 🇺🇸 English
+## 🇺🇸 English <a name="english"></a>
 
 ### Description
 This project is a personal portfolio site developed with the goal of creating a weather and forecast page, capable of searching any city in the world, converting it to geographic coordinates (Latitude and Longitude), and providing the current weather as well as a 5-day forecast.
@@ -85,4 +87,7 @@ Upon entering the page, the user has 5 default cities and the option to search f
 ![Mobile Screenshot 3](https://github.com/user-attachments/assets/37e77284-cb2f-4c27-898c-38ff64805bb1)
 ![Mobile Screenshot 4](https://github.com/user-attachments/assets/346175dd-34f5-471b-9fa7-738245268a1a)
 
+https://github.com/user-attachments/assets/8aa7a91d-bac9-41f4-be24-4da999c55b1f
+
 This repository provides access to all material produced in the project.
+
